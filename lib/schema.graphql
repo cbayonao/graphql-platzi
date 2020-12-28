@@ -1,4 +1,19 @@
+type Course {
+  "Identificador unico"
+  _id: ID!
+  "Titulo o nombre del Curso"
+  title: String!
+  "Profesor que lo dicta"
+  teacher: String
+  "Una breve descripción del Curso"
+  description: String!
+  "Tema del curso"
+  topic: String
+}
+
 type Query {
-  "Retorna un saludo al mundo"
-  hola: String
+  "Devuelve todos los cursos"
+  getCourses: [Course]
+  "Devuelve un curso. El ! indica que es un parametro obligatorio"
+  getCourse(id: ID!): Course
 }
